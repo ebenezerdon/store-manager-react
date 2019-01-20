@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/ebenezerdon/store-manager-react#readme",
   "devDependencies": {
-    "webpack": "^4.28.4"
+    "webpack": "^4.28.4",
+    "webpack-cli": "^3.2.1"
   }
 }
