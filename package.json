@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/ebenezerdon/store-manager-react/issues"
   },
-  "homepage": "https://github.com/ebenezerdon/store-manager-react#readme"
+  "homepage": "https://github.com/ebenezerdon/store-manager-react#readme",
+  "devDependencies": {
+    "webpack": "^4.28.4"
+  }
 }
