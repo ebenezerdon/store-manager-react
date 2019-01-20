@@ -3,27 +3,34 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+
   "scripts": {
     "start": "webpack-dev-server --open --mode development",
     "build": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ebenezerdon/store-manager-react.git"
   },
+
   "keywords": [],
   "author": "Ebenezer Don",
   "license": "ISC",
+
   "bugs": {
     "url": "https://github.com/ebenezerdon/store-manager-react/issues"
   },
+
   "homepage": "https://github.com/ebenezerdon/store-manager-react#readme",
+
   "dependencies": {
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-scripts": "2.1.1"
   },
+
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.2.3",
@@ -35,5 +42,9 @@
     "webpack": "^4.28.4",
     "webpack-cli": "^3.2.1",
     "webpack-dev-server": "^3.1.14"
+  },
+
+  "eslintConfig": {
+    "extends": "react-app"
   }
 }
