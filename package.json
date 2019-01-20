@@ -19,6 +19,10 @@
   },
   "homepage": "https://github.com/ebenezerdon/store-manager-react#readme",
   "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
     "webpack": "^4.28.4",
     "webpack-cli": "^3.2.1"
   }
