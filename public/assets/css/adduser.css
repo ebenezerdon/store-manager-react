@@ -1,0 +1,13 @@
+@import "lib/nav.css";
+@import "lib/footer.css";
+@import "lib/button.css";
+@import "lib/regform.css";
+
+body {
+    overflow: visible;
+    max-width: 100%;
+}
+
+.reg {
+    margin-top: 200px;
+}
