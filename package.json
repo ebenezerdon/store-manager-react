@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start:dev": "webpack-dev-server --config webpack/webpack.dev.js --open --hot",
+    "start": "npm run build && npm run serve",
     "build": "webpack --config webpack/webpack.prod.js",
     "serve": "node server.js",
-    "start": "npm run build && npm run serve"
+    "test:dev": "jest"
   },
   "repository": {
     "type": "git",
