@@ -161,3 +161,4 @@ typings/
 
 dist
 package-lock.json
+.vscode/settings.json
