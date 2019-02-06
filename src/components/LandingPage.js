@@ -3,7 +3,7 @@ import React from 'react'
 const LandingPage = () => {
     return (
         <div>
-            <h1> WELCOME TO LEARNGROUND </h1>
+            <h1> Store Manager </h1>
         </div>
     )
 }
