@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import thunk from 'redux-thunk';
-import App from './app/App';
+import App from './App';
 import rootReducer from './reducers';
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
