@@ -12,13 +12,14 @@ export const LoginComponent = ({ loginUser, loginState }) => {
     loginUser(emailaddress, password);
   };
   if (loginState === constants.LOGIN_SUCCESS) {
-    return <Redirect to="/" />;
+    return <Redirect to="/dashboard" />;
   }
+  const submitButton = <button type="submit" className="button">Login</button>
   return (
     <main id="login-tag">
       <div className="container">
         <div className="login-form" id="login">
-          <form action="" autoComplete="on">
+          <form action="" autoComplete="on" onSubmit={onFormSubmit}>
             <h1>Login Here</h1>
             <div>
               <input type="email" placeholder="Email Address" required="" id="emailaddress" autoFocus />
@@ -26,11 +27,9 @@ export const LoginComponent = ({ loginUser, loginState }) => {
             <div>
               <input type="password" placeholder="Password" required="" id="password" />
             </div>
-            <button type="submit" className="button">Login</button>
-          </form>
-          <div className="ring-loader">
+            {loginState !== constants.LOGGING_IN && submitButton}
             {loginState === constants.LOGGING_IN && <EllipsisLoaderComponent />}
-          </div>
+          </form>
         </div>
       </div>
     </main>
