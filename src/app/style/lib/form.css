@@ -1,7 +1,6 @@
 
 .login-form {
 	background: #fff;
-	position: absolute;
 	top: 23em;
 	left: 35vw;
 	right: 35vw;
@@ -55,12 +54,12 @@
 	-o-transform: rotate(-3.5deg);
 }
 
-.login-form form { 
-	margin: 0 20px; 
-	position: relative 
+.login-form form {
+	margin: 0 20px;
+	position: relative
 }
 
-.login-form form input[type="text"],
+.login-form form input[type="email"],
 .login-form input[type="password"] {
 	border-radius: 3px;
 	box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;
@@ -73,7 +72,7 @@
 	width: 80%;
 }
 
-.login-form form input[type="text"]:focus,
+.login-form form input[type="email"]:focus,
 .login-form form input[type="password"]:focus {
 	box-shadow: 0 0 2px #262734 inset;
 	background-color: #fff;
@@ -125,7 +124,7 @@
 }
 
 /* This is not the best idea, I'm still trying to fix all the hazzle
-   10:41 am, 10-10-18 
+   10:41 am, 10-10-18
    - Ebenezer Don */
 
 @media only screen and (max-width: 1000px) and (min-width: 799px) {
