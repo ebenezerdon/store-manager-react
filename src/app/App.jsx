@@ -1,19 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { createStore, applyMiddleware } from 'redux';
-import { Provider } from 'react-redux';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import thunk from 'redux-thunk';
-import App from './App';
-import rootReducer from './reducers';
+import React, { Fragment } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Login } from './login';
 
-const store = createStore(rootReducer, applyMiddleware(thunk));
-
-ReactDOM.render(
-  <Provider store={store}>
-    <App />
-    <ToastContainer autoClose={4000} pauseOnFocusLoss={false} />
-  </Provider>,
-  document.getElementById('app'),
+const App = () => (
+  <Router>
+      <Fragment>
+          <Switch>
+            <Route path="/" component={Login} exact />
+          </Switch>
+      </Fragment>
+  </Router>
 );
+
+export default App;
