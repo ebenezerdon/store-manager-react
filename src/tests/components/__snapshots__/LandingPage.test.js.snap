@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`LandingPage Component should render the Landing Page 1`] = `
-<div>
-  <h1>
-     Store Manager 
-  </h1>
-</div>
-`;
