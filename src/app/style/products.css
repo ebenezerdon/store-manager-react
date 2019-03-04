@@ -12,7 +12,6 @@ body {
 }
 
 .row {
-    position: absolute;
     width: 100%;
     justify-content: flex-start;
     display: flex;
