@@ -6,19 +6,13 @@ import '../style/admindashboard.css';
 
 const methods = {
   componentWillMount({
-    fetchCurrentUser,
-    fetchallUsers,
-    fetchSaleRecord,
-    fetchProducts,
+    fetchStoreData,
     userData,
     saleRecord,
     products
   }) {
     if (!userData.currentUser) {
-      fetchCurrentUser();
-      fetchallUsers();
-      fetchSaleRecord();
-      fetchProducts();
+      fetchStoreData()
     }
   }
 };
