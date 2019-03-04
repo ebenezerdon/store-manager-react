@@ -33,10 +33,12 @@ const mapStateToProps = ({
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchCurrentUser: () => dispatch(doFetchCurrentUser()),
-    fetchallUsers: () => dispatch(doFetchAllUsers()),
-    fetchSaleRecord: () => dispatch(doFetchSaleRecord()),
-    fetchProducts: () => dispatch(doFetchProducts())
+    fetchStoreData: () => {
+      dispatch(doFetchCurrentUser());
+      dispatch(doFetchAllUsers());
+      dispatch(doFetchSaleRecord());
+      dispatch(doFetchProducts());
+    }
   };
 };
 
