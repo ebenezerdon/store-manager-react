@@ -1,12 +1,17 @@
 const path = require('path');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
+const dotenv = require('dotenv');
+
+dotenv.config();
 module.exports = {
   entry: './src/index.js',
   output: {
-    path: path.join(__dirname, '/dist'),
     filename: 'index_bundle.js',
+    path: path.join(__dirname, '/dist'),
+    publicPath: '/',
   },
   module: {
     rules: [
@@ -42,6 +47,9 @@ module.exports = {
     ],
   },
   plugins: [
+    new webpack.EnvironmentPlugin([
+      'API_URL',
+    ]),
     new HtmlWebpackPlugin({
       template: './public/index.html',
     }),
