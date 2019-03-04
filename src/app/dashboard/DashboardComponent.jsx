@@ -83,7 +83,7 @@ const DashboardComponent = ({
 
   return(
     <Fragment>
-      <div className="row">
+      <div className="row" id="dashboardColumns">
         <div className='product'>
           {userData.currentUser && userProfile()}
         </div>
