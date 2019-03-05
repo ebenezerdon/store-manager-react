@@ -5,6 +5,7 @@ import { Login } from './login';
 import { Dashboard } from './dashboard';
 import { ListProduct } from './products';
 import { SaleRecord } from './sales';
+import { ListUser } from './users';
 
 const App = () => (
   <Router>
@@ -15,6 +16,7 @@ const App = () => (
           <Route path="/dashboard" component={Dashboard} exact />
           <Route path="/products" component={ListProduct} exact />
           <Route path="/sales" component={SaleRecord} exact />
+          <Route path="/users" component={ListUser} exact />
         </Switch>
       </>
   </Router>
