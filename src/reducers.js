@@ -5,7 +5,8 @@ import { fetchAllDataReducer } from './app/common';
 
 const rootReducer = combineReducers({
   login: loginReducer,
-  fetchAllData: fetchAllDataReducer
+  fetchAllData: fetchAllDataReducer,
+  addProduct: addProductReducer
 });
 
 export default rootReducer;
