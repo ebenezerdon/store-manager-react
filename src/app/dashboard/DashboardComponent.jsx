@@ -2,7 +2,6 @@ import React, { Fragment } from 'react';
 import lifecycle from 'react-pure-lifecycle';
 import { Link } from 'react-router-dom';
 import { constants } from '../common';
-import '../style/admindashboard.css';
 
 const methods = {
   componentWillMount({
@@ -27,15 +26,13 @@ const DashboardComponent = ({
   const userProfile = () => {
     const { currentUser } = userData;
     return (
-      <figure className="profile">
-        <div className="profile-image">
+      <div>
+        <div>
           <img src= {currentUser.userimage} alt="User Image" />
         </div>
-        <figcaption>
           <h3>{currentUser.fullname}</h3>
           <h4>Store {currentUser.role}</h4>
-        </figcaption>
-      </figure>
+      </div>
     )
   }
 
@@ -44,9 +41,9 @@ const DashboardComponent = ({
     data.reverse();
     return (
       data.slice(0, 4).map(product => (
-        <a href="product-item.html">
+        <Link to={`/product/${saleRecord.productid}`}>
           <img src={product.productimage} width='100' />
-        </a>
+        </Link>
       ))
     )
   }
@@ -57,7 +54,7 @@ const DashboardComponent = ({
     return (
       allUsers.slice(0, 4).map(user => (
         <li>
-          <a href="#">{user.fullname}</a>
+        <Link to={`/profile/${user.id}`}>{user.fullname}</Link>
         </li>
       ))
     )
@@ -69,7 +66,7 @@ const DashboardComponent = ({
     return (
       data.slice(0, 4).map(saleRecord => (
         <li>
-          <a href="product-item.html">{saleRecord.productname}</a>
+          <Link to={`/product/${saleRecord.productid}`}>{saleRecord.productname}</Link>
         </li>
       ))
     )
@@ -77,37 +74,37 @@ const DashboardComponent = ({
 
   return(
     <Fragment>
-      <div className="row" id="dashboardColumns">
-        <div className='product'>
+      <div id="dashboardColumns">
+        <div>
           {userData.currentUser && userProfile()}
         </div>
-        <div className='product'>
-          <div className="product-item tp">
+        <div >
+          <div >
             <h3>Latest Products</h3>
             <div className="t-products">
               {products.data && latestProducts()}
             </div>
-            <a href="products.html" className="green-button">See All Products</a>
+            <Link to="/products">See All Products</Link>
           </div>
         </div>
 
-        <div className='product'>
-          <div className="product-item tp">
+        <div >
+          <div >
             <h3>Store Attendants</h3>
-            <ul className="user-list">
+            <ul >
               {userData.allUsers && storeAttendants()}
             </ul>
-            <a href="userlist.html" className="green-button">See All</a>
+            <Link to="/users">See All</Link>
           </div>
         </div>
 
-        <div className='product'>
-          <div className="product-item tp">
+        <div >
+          <div >
             <h3>New Sales</h3>
-            <ul className="user-list">
+            <ul >
               {saleRecord.data && sales()}
             </ul>
-            <a href="salesrecord.html" className="green-button">See All Sales Record</a>
+            <Link to="/sales">See All Sale Record</Link>
           </div>
         </div>
       </div>
