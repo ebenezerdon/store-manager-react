@@ -6,6 +6,7 @@ import { Dashboard } from './dashboard';
 import { ListProduct } from './products';
 import { SaleRecord } from './sales';
 import { ListUser } from './users';
+import { AddProduct } from './products';
 
 const App = () => (
   <Router>
@@ -17,6 +18,7 @@ const App = () => (
           <Route path="/products" component={ListProduct} exact />
           <Route path="/sales" component={SaleRecord} exact />
           <Route path="/users" component={ListUser} exact />
+          <Route path="/new/product" component={AddProduct} exact />
         </Switch>
       </>
   </Router>
