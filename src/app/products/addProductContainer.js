@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { doAddProduct } from './duck';
-import { addProductComponent as addProduct } from './addProductComponent';
+import addProductComponent from './addProductComponent';
 import {
   doFetchCurrentUser,
   doFetchAllUsers,
@@ -13,8 +13,10 @@ const mapStateToProps = ({
     fetchProductsState,
     products,
   },
-  addProductState,
-  errorMessage
+  addProduct: {
+    addProductState,
+    errorMessage
+  }
 }) => {
   return {
     addProductState,
@@ -39,6 +41,6 @@ const mapDispatchToProps = dispatch => {
 const addProductContainer = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(addProduct);
+)(addProductComponent);
 
 export { addProductContainer, mapDispatchToProps, mapStateToProps };
