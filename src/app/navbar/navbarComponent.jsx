@@ -24,16 +24,6 @@ const NavbarComponent = () => {
           <i className="far fa-user-circle" />
         </Link>
       </div>
-      <div className="nav-2">
-        <div className="wrap">
-          <div className="search">
-            <input type="text" className="searchTerm" placeholder="Search" />
-            <button type="submit" className="searchButton">
-              <div className="icon"><i className="fa fa-search" /></div>
-            </button>
-          </div>
-        </div>
-      </div>
     </div>
   );
 }
