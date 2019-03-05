@@ -8,8 +8,8 @@ const mapStateToProps = ({ login: { loginState, errorMessage } }) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    loginUser: (usernameOrEmail, password) =>
-      dispatch(doLogin(usernameOrEmail, password)),
+    loginUser: (emailAddress, password) =>
+      dispatch(doLogin(emailAddress, password)),
   };
 };
 const LoginContainer = connect(
