@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Navbar } from './navbar';
 import { Login } from './login';
 import { Dashboard } from './dashboard';
+import { ListProduct } from './products';
 
 const App = () => (
   <Router>
@@ -11,6 +12,7 @@ const App = () => (
         <Switch>
           <Route path="/" component={Login} exact />
           <Route path="/dashboard" component={Dashboard} exact />
+          <Route path="/products" component={ListProduct} exact />
         </Switch>
       </>
   </Router>
