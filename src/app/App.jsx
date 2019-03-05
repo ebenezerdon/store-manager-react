@@ -6,6 +6,7 @@ import { Dashboard } from './dashboard';
 import { ListProduct } from './products';
 import { SaleRecord } from './sales';
 import { ListUser } from './users';
+import { AddUser } from './users';
 import { AddProduct } from './products';
 
 const App = () => (
@@ -19,6 +20,7 @@ const App = () => (
           <Route path="/sales" component={SaleRecord} exact />
           <Route path="/users" component={ListUser} exact />
           <Route path="/new/product" component={AddProduct} exact />
+          <Route path="/new/user" component={AddUser} exact />
         </Switch>
       </>
   </Router>
