@@ -19,21 +19,6 @@ const ListProductComponent = ({
   products,
   fetchProductsState,
 }) => {
-  const addProduct = () => {
-    <form className="reg add-product-className" id="add-product">
-      <input type="text" className="reg-input" placeholder="Product Name" id="productname" />
-      <input type="text" className="reg-input" placeholder="Description" id="description" />
-      <input type="text" className="reg-input" placeholder="Price" id="price" />
-      <input type="number" className="reg-input" placeholder="Quantity" id="quantity" />
-      <input type="number" className="reg-input" placeholder="Minimum quantiy allowed" id="minallowed" />
-      <label for="productimage" className="user-image">Select Product Image</label>
-      <button id="upload-image">upload</button> <br></br>
-      <input type="file" className="select-user-image" defaultValue="Select product image" id="productimage" />
-      <button type="submit" className="btn p-modal">Add product</button>
-      <a href="" className="btn p-modal" id="close-modal-btn">Close</a>
-    </form>
-  }
-
   const listProducts = () => {
     const { data } = products;
     data.reverse();
