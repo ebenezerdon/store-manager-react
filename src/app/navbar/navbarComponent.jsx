@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import "../style/lib/nav.css"
 
 const NavbarComponent = () => {
   const role = localStorage.getItem('role');
@@ -12,11 +11,7 @@ const NavbarComponent = () => {
   }
 
   return (
-    <div className="navbar-component">
-      <div className="top-nav">
-        <div className="logo">
-          <a href="../index.html"><img src="./logo.png" alt="" /></a>
-        </div>
+      <div>
         <p id="logoutButton">
           <Link to="/" onClick={logout}>Logout</Link>
         </p>
@@ -24,7 +19,6 @@ const NavbarComponent = () => {
           <i className="far fa-user-circle" />
         </Link>
       </div>
-    </div>
   );
 }
 
