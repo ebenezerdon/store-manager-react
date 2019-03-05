@@ -1,38 +1,67 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
+import lifecycle from 'react-pure-lifecycle';
 import { EllipsisLoaderComponent } from '../common/loaders'
 import { constants } from './duck';
 
-export const addProductComponent = ({ addProduct, addProductState }) => {
+const methods = {
+  componentDidMount({
+    fetchStoreData,
+    userData,
+    products
+  }) {
+    console.log('-------', products);
+    if (!products.data) {
+      console.log('Yoooo!');
+      fetchStoreData();
+    }
+  }
+};
+
+const addProductComponent = ({ addProduct, addProductState }) => {
   const onFormSubmit = e => {
     e.preventDefault();
-    const emailaddress = e.target.elements.emailaddress.value.trim();
-    const password = e.target.elements.password.value.trim();
-    addProduct(emailaddress, password);
+    const productDetails = {
+      productname: e.target.elements.productName.value.trim(),
+      description: e.target.elements.description.value.trim(),
+      productimage: e.target.elements.productImage.value.trim(),
+      price: e.target.elements.price.value.trim(),
+      quantity: e.target.elements.quantity.value.trim(),
+      minallowed: e.target.elements.minAllowed.value.trim(),
+    }
+    addProduct(productDetails);
   };
+  console.log('====-=====', addProductState);
   if (addProductState === constants.ADD_PRODUCT_SUCCESS) {
     alert('yo!');
   }
   const submitButton = <button type="submit" className="btn btn-primary">Submit</button>
   return (
     <>
-      <form>
+      <form autoComplete="on" onSubmit={onFormSubmit}>
         <div className="form-group">
-          <label htmlFor="exampleInputEmail1">Email address</label>
-          <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
-          <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+          <input type="text" placeholder="Product Name" id="productName" />
         </div>
         <div className="form-group">
-          <label htmlFor="exampleInputPassword1">Password</label>
-          <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />
+          <input type="text" placeholder="Description" id="description" />
         </div>
-        <div className="form-check">
-          <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-          <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
+        <div className="form-group">
+          <input type="text" placeholder="Price" id="price" />
         </div>
+        <div className="form-group">
+          <input type="number" placeholder="Quantity" id="quantity" />
+        </div>
+        <div className="form-group">
+          <input type="number" placeholder="Minimum quantiy allowed" id="minAllowed" />
+        </div>
+        <div className="form-group">
+          <label htmlFor="productImage">Example file input</label>
+          <input type="file" className="form-control-file" id="productImage" />
+        </div>
+        <button type="submit">Add product</button>
       </form>
     </>
   );
 };
 
-export default addProductComponent;
+export default lifecycle(methods)(addProductComponent);
