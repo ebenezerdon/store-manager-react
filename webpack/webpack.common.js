@@ -1,5 +1,4 @@
 const path = require('path');
-const StyleLintPlugin = require('stylelint-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
@@ -29,6 +28,10 @@ module.exports = {
         },
       },
       {
+        test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+        loader: 'url-loader?limit=100000'
+      },
+      {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
       },
@@ -52,13 +55,6 @@ module.exports = {
     ]),
     new HtmlWebpackPlugin({
       template: './public/index.html',
-    }),
-    new StyleLintPlugin({
-      configFile: '.stylelintrc',
-      context: 'src',
-      files: '**/*.scss',
-      failOnError: false,
-      quiet: false,
     }),
   ],
   resolve: {
