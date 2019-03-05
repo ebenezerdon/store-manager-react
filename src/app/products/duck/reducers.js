@@ -2,8 +2,7 @@ import types from './types';
 
 const INITIAL_STATE = {
   addProductState: '',
-  errorMessage: '',
-  products: []
+  errorMessage: ''
 };
 const addProductReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
