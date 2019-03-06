@@ -20,6 +20,14 @@ const addProductReducer = (state = INITIAL_STATE, action) => {
         errorMessage,
       };
     }
+    case types.ADD_TO_CART: {
+      const { newCartProduct } = action;
+      const oldCartProducts = state.cart;
+      return {
+        ...state,
+        cart: { ...oldCartProducts, ...newCartProduct },
+      };
+    }
     default:
       return state;
   }
