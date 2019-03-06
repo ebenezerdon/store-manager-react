@@ -21,7 +21,6 @@ const ListProductComponent = ({
   addToCart,
   fetchProductsState,
 }) => {
-  console.log('111111', cart);
   addToCart = addToCart.bind()
   const listProducts = () => {
     const { data } = products;
@@ -37,12 +36,6 @@ const ListProductComponent = ({
               </Link>
               <button onClick={() => addToCart(cart, product)} className='cart-btn'>Add to cart</button>
               <div className="edit-product-div">
-              <Link className="edit-link" to={`/edit/${product.id}`}>
-                <button className="edit-product">Edit</button>
-              </Link>
-              <Link className="edit-link" to={`/delete/${product.id}`}>
-                <button className="edit-product">Delete</button>
-              </Link>
               </div>
             </div>
           </div>

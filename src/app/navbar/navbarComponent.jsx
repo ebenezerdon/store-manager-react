@@ -21,6 +21,9 @@ const NavbarComponent = () => {
           <Link id="name" to="/" onClick={logout}>Logout</Link>
         </p>
         <p>
+          <Link id="name" to="/users">Users</Link>
+        </p>
+        <p>
           <Link id="name" to="/cart">Cart</Link>
         </p>
         <p>
