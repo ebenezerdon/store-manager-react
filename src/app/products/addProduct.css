@@ -9,6 +9,13 @@
   font-size: 1.1em;
 }
 
+#addproductForm select {
+  border: 1px solid rgb(15, 19, 39);
+  padding-left: 22.5%;
+  width: 50%;
+  height: 30px;
+}
+
 #selectImage {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -20,7 +27,7 @@
   padding: 5px;
 }
 
-#addProductForm #productImage {
+#addProductForm #productImage, #userImage {
   display: none;
 }
 
