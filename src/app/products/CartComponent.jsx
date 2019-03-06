@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './cart.css';
 import '../style/products.css';
 
-const cartComponent = ({ cart }) => {
+const cartComponent = ({ cart, checkout, checkoutState}) => {
   console.log('----->>', cart)
   const listProducts = () => {
     return (
@@ -26,10 +26,19 @@ const cartComponent = ({ cart }) => {
     <>
       <div className='' id="">
         <div className="row">
-          {cart.length > 0 && listProducts()}
+          {
+            cart.length > 0 &&
+            checkoutState !== 'CHECKOUT_SUCCESS' &&
+            listProducts()
+          }
         </div>
-        {cart.length > 0 && <button id='checkoutBtn'>Checkout</button>}
+        {
+          cart.length > 0 &&
+          checkoutState !== 'CHECKOUT_SUCCESS' &&
+          <button id='checkoutBtn' onClick={() => checkout(cart)}>Checkout</button>
+        }
         {cart.length === 0 && <h3>No Item in the cart yet.</h3>}
+        {checkoutState === 'CHECKOUT_SUCCESS' && <h3>Sale record created.</h3>}
       </div>
     </>
   )
