@@ -3,7 +3,7 @@ import { toast } from 'react-toastify';
 import actions from './actions';
 import constants from './constants';
 
-const { setAddProductState, setAddProductError } = actions;
+const { setAddProductState, setAddProductError, addToCart } = actions;
 const apiUrl = process.env.API_URL;
 
 const doAddProduct = productDetails => dispatch => {
@@ -27,4 +27,9 @@ const doAddProduct = productDetails => dispatch => {
     });
 };
 
-export default doAddProduct;
+const doAddToCart = (cart, product) => dispatch => {
+  cart.unshift(product);
+  dispatch(addToCart(({ cart })));
+}
+
+export { doAddProduct, doAddToCart };
