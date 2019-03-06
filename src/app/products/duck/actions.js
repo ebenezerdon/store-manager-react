@@ -10,13 +10,31 @@ const setAddProductError = errorMessage => ({
   errorMessage
 });
 
+const setCheckoutState = checkoutState => ({
+  type: types.SET_CHECKOUT_STATE,
+  checkoutState
+});
+
+const setCheckoutError = errorMessage => ({
+  type: types.SET_CHECKOUT_ERROR,
+  errorMessage
+});
+
 const addToCart = newCartProduct => ({
   type: types.ADD_TO_CART,
   newCartProduct
 });
 
+const clearCart = data => ({
+  type: types.CLEAR_CART,
+  data
+})
+
 export default {
   setAddProductState,
   setAddProductError,
-  addToCart
+  setCheckoutState,
+  setCheckoutError,
+  addToCart,
+  clearCart
 };
