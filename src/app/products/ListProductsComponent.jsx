@@ -2,7 +2,6 @@ import React from 'react';
 import lifecycle from 'react-pure-lifecycle';
 import { Link } from 'react-router-dom';
 import { constants } from '../common';
-import './addProduct.css';
 import '../style/products.css';
 
 const methods = {
@@ -33,8 +32,6 @@ const ListProductComponent = ({
               </Link>
               <Link to={`/product/${product.id}`}>
                 <p>{product.productname}</p>
-                <p>{product.price}</p>
-                <p>{product.id}</p>
               </Link>
               <button className='cart-btn'>Add to cart</button>
               <div className="edit-product-div">
@@ -54,7 +51,7 @@ const ListProductComponent = ({
   return (
     <>
       <div className='' id="">
-        <button className="btn" id="add-product-btn">Add New Product</button>
+        <button id="add-product-btn">Add New Product</button>
         <div className="row">
           {products.data && listProducts()}
         </div>
