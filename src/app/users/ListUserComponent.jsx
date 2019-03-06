@@ -2,6 +2,7 @@ import React from 'react';
 import lifecycle from 'react-pure-lifecycle';
 import { Link } from 'react-router-dom';
 import { constants } from '../common';
+import './listUser.css';
 
 const methods = {
   componentWillMount({
@@ -37,7 +38,10 @@ const ListUserComponent = ({
 
   return (
     <>
-      <table className="table table-striped">
+      <Link to="/new/user">
+          <button id="add-product-btn">Add New User</button>
+      </Link>
+      <table id="listUserTable" className="table table-striped">
         <thead>
           <tr>
             <th>Name</th>

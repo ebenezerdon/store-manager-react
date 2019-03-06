@@ -37,7 +37,7 @@ const addUserComponent = ({ addUser, addUserState }) => {
   const submitButton = <button type="submit" className="btn btn-primary">Submit</button>
   return (
     <>
-      <form autoComplete="on" onSubmit={onFormSubmit}>
+      <form id="addproductForm" autoComplete="on" onSubmit={onFormSubmit}>
         <div className="form-group">
           <input type="text" placeholder="Full Name" id="fullName" />
         </div>
@@ -45,10 +45,7 @@ const addUserComponent = ({ addUser, addUserState }) => {
           <input type="text" placeholder="Email Address" id="emailAddress" />
         </div>
         <div className="form-group">
-          <input type="number" placeholder="Phone Number" id="phoneNumber" />
-        </div>
-        <div className="form-group">
-          <input type="text" placeholder="password" id="password" />
+          <input type="text" placeholder="Phone Number" id="phoneNumber" />
         </div>
         <div className="form-group">
           <select className="form-control" id="role">
@@ -56,11 +53,11 @@ const addUserComponent = ({ addUser, addUserState }) => {
             <option>admin</option>
           </select>
         </div>
-        <div className="form-group">
-          <label htmlFor="userImage">User Image</label>
-          <input type="file" className="form-control-file" id="userImage" />
+        <div id="selectImage">
+          <label id="label" htmlFor="userImage">Select user image</label>
+          <input type="file" id="userImage" />
         </div>
-        <button type="submit">Add User</button>
+        <button id="addProductBtn" type="submit">Add User</button>
       </form>
     </>
   );
