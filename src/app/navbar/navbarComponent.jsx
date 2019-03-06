@@ -14,14 +14,14 @@ const NavbarComponent = () => {
   return (
     <div className="navbar-component">
       <div className="top-nav">
-        <div className="logo">
-          <a href="../index.html"><img src="./logo.png" alt="" /></a>
-        </div>
         <Link to="/dashboard">
           <i className="far fa-user-circle" />
         </Link>
         <p>
           <Link id="name" to="/" onClick={logout}>Logout</Link>
+        </p>
+        <p>
+          <Link id="name" to="/cart">Cart</Link>
         </p>
         <p>
           <Link id="name" to="/sales">Sale Record</Link>
