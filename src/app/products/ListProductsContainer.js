@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import ListProductComponent from './ListProductsComponent';
+import { doAddToCart } from './duck';
 import {
   doFetchCurrentUser,
   doFetchAllUsers,
@@ -11,12 +12,14 @@ const mapStateToProps = ({
   fetchAllData: {
     fetchProductsState,
     products,
+    cart,
     errorMessage
-  },
+  }
 }) => {
   return {
     fetchProductsState,
     products,
+    cart,
     errorMessage
   };
 };
@@ -28,6 +31,9 @@ const mapDispatchToProps = dispatch => {
       dispatch(doFetchAllUsers());
       dispatch(doFetchSaleRecord());
       dispatch(doFetchProducts());
+    },
+    addToCart: (cart, product) => {
+      dispatch(doAddToCart(cart, product))
     }
   };
 };

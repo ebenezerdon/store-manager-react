@@ -7,7 +7,6 @@ import '../style/products.css';
 const methods = {
   componentWillMount({
     fetchStoreData,
-    userData,
     products
   }) {
     if (!products.data) {
@@ -18,8 +17,12 @@ const methods = {
 
 const ListProductComponent = ({
   products,
+  cart,
+  addToCart,
   fetchProductsState,
 }) => {
+  console.log('111111', cart);
+  addToCart = addToCart.bind()
   const listProducts = () => {
     const { data } = products;
     return (
@@ -32,7 +35,7 @@ const ListProductComponent = ({
               <Link to={`/product/${product.id}`}>
                 <p>{product.productname}</p>
               </Link>
-              <button className='cart-btn'>Add to cart</button>
+              <button onClick={() => addToCart(cart, product)} className='cart-btn'>Add to cart</button>
               <div className="edit-product-div">
               <Link className="edit-link" to={`/edit/${product.id}`}>
                 <button className="edit-product">Edit</button>

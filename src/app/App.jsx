@@ -7,7 +7,7 @@ import { ListProduct } from './products';
 import { SaleRecord } from './sales';
 import { ListUser } from './users';
 import { AddUser } from './users';
-import { AddProduct } from './products';
+import { AddProduct, Cart } from './products';
 
 const App = () => (
   <Router>
@@ -17,6 +17,7 @@ const App = () => (
           <Route path="/" component={Login} exact />
           <Route path="/dashboard" component={Dashboard} exact />
           <Route path="/products" component={ListProduct} exact />
+          <Route path="/cart" component={Cart} exact />
           <Route path="/sales" component={SaleRecord} exact />
           <Route path="/users" component={ListUser} exact />
           <Route path="/new/product" component={AddProduct} exact />
