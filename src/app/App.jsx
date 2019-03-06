@@ -3,6 +3,11 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Navbar } from './navbar';
 import { Login } from './login';
 import { Dashboard } from './dashboard';
+import { ListProduct } from './products';
+import { SaleRecord } from './sales';
+import { ListUser } from './users';
+import { AddUser } from './users';
+import { AddProduct } from './products';
 
 const App = () => (
   <Router>
@@ -11,6 +16,11 @@ const App = () => (
         <Switch>
           <Route path="/" component={Login} exact />
           <Route path="/dashboard" component={Dashboard} exact />
+          <Route path="/products" component={ListProduct} exact />
+          <Route path="/sales" component={SaleRecord} exact />
+          <Route path="/users" component={ListUser} exact />
+          <Route path="/new/product" component={AddProduct} exact />
+          <Route path="/new/user" component={AddUser} exact />
         </Switch>
       </>
   </Router>

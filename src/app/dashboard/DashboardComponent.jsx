@@ -50,9 +50,10 @@ const DashboardComponent = ({
     data.reverse();
     return (
       data.slice(0, 4).map(product => (
-        <a href="product-item.html">
+        <Link className="col-md-6 col-sm-12"
+          to={`/product/${product.id}`}>
           <img src={product.productimage} width='100' />
-        </a>
+        </Link>
       ))
     )
   }
@@ -63,7 +64,7 @@ const DashboardComponent = ({
     return (
       allUsers.slice(0, 4).map(user => (
         <li>
-          <a href="#">{user.fullname}</a>
+          <Link className="list" to={`/profile/${user.id}`}>{user.fullname}</Link>
         </li>
       ))
     )
@@ -75,7 +76,7 @@ const DashboardComponent = ({
     return (
       data.slice(0, 4).map(saleRecord => (
         <li>
-          <a href="product-item.html">{saleRecord.productname}</a>
+          <Link className="list" to={`/product/${saleRecord.productid}`}>{saleRecord.productname}</Link>
         </li>
       ))
     )
@@ -93,7 +94,7 @@ const DashboardComponent = ({
             <div className="t-products">
               {products.data && latestProducts()}
             </div>
-            <a href="products.html" className="green-button">See All Products</a>
+            <Link className="green-button" to="/products">See All Products</Link>
           </div>
         </div>
 
@@ -103,7 +104,7 @@ const DashboardComponent = ({
             <ul className="user-list">
               {userData.allUsers && storeAttendants()}
             </ul>
-            <a href="userlist.html" className="green-button">See All</a>
+            <Link className="green-button" to="/users">See All</Link>
           </div>
         </div>
 
@@ -113,7 +114,7 @@ const DashboardComponent = ({
             <ul className="user-list">
               {saleRecord.data && sales()}
             </ul>
-            <a href="salesrecord.html" className="green-button">See All Sales Record</a>
+            <Link className="green-button" to="/sales">See All Sale Record</Link>
           </div>
         </div>
       </div>
