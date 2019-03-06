@@ -8,7 +8,8 @@ const INITIAL_STATE = {
   errorMessage: '',
   saleRecord: [],
   products: [],
-  userData: []
+  userData: [],
+  cart: []
 };
 
 const fetchAllDataReducer = (state = INITIAL_STATE, action) => {
