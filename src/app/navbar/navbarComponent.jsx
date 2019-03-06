@@ -17,22 +17,18 @@ const NavbarComponent = () => {
         <div className="logo">
           <a href="../index.html"><img src="./logo.png" alt="" /></a>
         </div>
-        <p id="logoutButton">
-          <Link to="/" onClick={logout}>Logout</Link>
-        </p>
         <Link to="/dashboard">
           <i className="far fa-user-circle" />
         </Link>
-      </div>
-      <div className="nav-2">
-        <div className="wrap">
-          <div className="search">
-            <input type="text" className="searchTerm" placeholder="Search" />
-            <button type="submit" className="searchButton">
-              <div className="icon"><i className="fa fa-search" /></div>
-            </button>
-          </div>
-        </div>
+        <p>
+          <Link id="name" to="/" onClick={logout}>Logout</Link>
+        </p>
+        <p>
+          <Link id="name" to="/sales">Sale Record</Link>
+        </p>
+        <p>
+          <Link id="name" to="/products">Products</Link>
+        </p>
       </div>
     </div>
   );
