@@ -2,6 +2,7 @@ import React from 'react';
 import lifecycle from 'react-pure-lifecycle';
 import { Link } from 'react-router-dom';
 import { constants } from '../common';
+import '../style/products.css';
 
 const methods = {
   componentWillMount({
@@ -24,20 +25,24 @@ const ListProductComponent = ({
     data.reverse();
     return (
       data.map(product => (
-          <div className="col-md-3 col-sm-4 col-s-6">
-            <div>
+          <div className="product">
+            <div className="product-item hover-effect">
               <Link to={`/product/${product.id}`}>
-                <img className="img-fluid img-thumbnail" src={product.productimage} width='300' />
+                <img src={product.productimage} width='300' />
               </Link>
               <Link to={`/product/${product.id}`}>
                 <p>{product.productname}</p>
                 <p>{product.price}</p>
                 <p>{product.id}</p>
               </Link>
-              <button className=''>Add to cart</button>
-              <div>
-                <Link to={`/edit/${product.id}`}>Edit</Link>
-                <Link to={`/delete/${product.id}`}>Delete</Link>
+              <button className='cart-btn'>Add to cart</button>
+              <div className="edit-product-div">
+              <Link to={`/edit/${product.id}`}>
+                <button className="edit-product">Edit</button>
+              </Link>
+              <Link to={`/delete/${product.id}`}>
+                <button className="edit-product">Delete</button>
+              </Link>
               </div>
             </div>
           </div>
