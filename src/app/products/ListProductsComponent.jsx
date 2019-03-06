@@ -22,7 +22,6 @@ const ListProductComponent = ({
 }) => {
   const listProducts = () => {
     const { data } = products;
-    data.reverse();
     return (
       data.map(product => (
           <div className="product">
@@ -51,7 +50,9 @@ const ListProductComponent = ({
   return (
     <>
       <div className='' id="">
-        <button id="add-product-btn">Add New Product</button>
+        <Link to="/new/product">
+          <button id="add-product-btn">Add New Product</button>
+        </Link>
         <div className="row">
           {products.data && listProducts()}
         </div>

@@ -25,11 +25,11 @@
 }
 
 #addProductBtn {
-	background-color:#221c4d;
+	background-color:#1b1d25;
 	-moz-border-radius:28px;
 	-webkit-border-radius:28px;
 	border-radius:28px;
-	border:1px solid #031949;
+	border:1px solid rgb(5, 15, 36);
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
