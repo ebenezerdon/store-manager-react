@@ -2,6 +2,7 @@ import types from './types';
 
 const INITIAL_STATE = {
   addProductState: '',
+  checkoutState: '',
   errorMessage: ''
 };
 const addProductReducer = (state = INITIAL_STATE, action) => {
@@ -28,9 +29,37 @@ const addProductReducer = (state = INITIAL_STATE, action) => {
         cart: { ...oldCartProducts, ...newCartProduct },
       };
     }
+    case types.CLEAR_CART: {
+      const { data } = action;
+      return {
+        ...state,
+        cart: data
+      };
+    }
     default:
       return state;
   }
 };
 
-export default addProductReducer;
+const checkoutReducer = (state = INITIAL_STATE, action) => {
+  switch (action.type) {
+    case types.SET_CHECKOUT_STATE: {
+      const { checkoutState } = action;
+      return {
+        ...state,
+        checkoutState,
+      };
+    }
+    case types.SET_CHECKOUT_ERROR: {
+      const { errorMessage } = action;
+      return {
+        ...state,
+        errorMessage,
+      };
+    }
+    default:
+      return state;
+  }
+};
+
+export { addProductReducer, checkoutReducer };

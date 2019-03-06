@@ -1,5 +1,5 @@
-export { default as addProductReducer } from './reducers';
+export { addProductReducer, checkoutReducer } from './reducers';
 export { default as constants } from './constants';
-export { doAddProduct, doAddToCart } from './operations';
+export { doAddProduct, doAddToCart, doCheckout } from './operations';
 export { default as actions } from './actions';
 export { default as types } from './types';
