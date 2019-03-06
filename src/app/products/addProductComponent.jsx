@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom';
 import lifecycle from 'react-pure-lifecycle';
 import { EllipsisLoaderComponent } from '../common/loaders'
 import { constants } from './duck';
+import './addProduct.css';
 
 const methods = {
   componentDidMount({
@@ -38,7 +39,7 @@ const addProductComponent = ({ addProduct, addProductState }) => {
   const submitButton = <button type="submit" className="btn btn-primary">Submit</button>
   return (
     <>
-      <form autoComplete="on" onSubmit={onFormSubmit}>
+      <form id="addproductForm" autoComplete="on" onSubmit={onFormSubmit}>
         <div className="form-group">
           <input type="text" placeholder="Product Name" id="productName" />
         </div>
@@ -54,11 +55,11 @@ const addProductComponent = ({ addProduct, addProductState }) => {
         <div className="form-group">
           <input type="number" placeholder="Minimum quantiy allowed" id="minAllowed" />
         </div>
-        <div className="form-group">
-          <label htmlFor="productImage">Example file input</label>
-          <input type="file" className="form-control-file" id="productImage" />
+        <div id="selectImage">
+          <label id="label" htmlFor="productImage">Select product image</label>
+          <input type="file" id="productImage" />
         </div>
-        <button type="submit">Add product</button>
+        <button id="addProductBtn" type="submit">Add product</button>
       </form>
     </>
   );

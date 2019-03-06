@@ -2,6 +2,7 @@ import React from 'react';
 import lifecycle from 'react-pure-lifecycle';
 import { Link } from 'react-router-dom';
 import { constants } from '../common';
+import './addProduct.css';
 import '../style/products.css';
 
 const methods = {
@@ -37,10 +38,10 @@ const ListProductComponent = ({
               </Link>
               <button className='cart-btn'>Add to cart</button>
               <div className="edit-product-div">
-              <Link to={`/edit/${product.id}`}>
+              <Link className="edit-link" to={`/edit/${product.id}`}>
                 <button className="edit-product">Edit</button>
               </Link>
-              <Link to={`/delete/${product.id}`}>
+              <Link className="edit-link" to={`/delete/${product.id}`}>
                 <button className="edit-product">Delete</button>
               </Link>
               </div>
