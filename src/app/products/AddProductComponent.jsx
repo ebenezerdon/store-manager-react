@@ -10,7 +10,7 @@ const AddProductComponent = ({ addProduct, addProductState }) => {
     const productDetails = {
       productname: e.target.elements.productName.value.trim(),
       description: e.target.elements.description.value.trim(),
-      productimage: 'http://staffmobility.eu/sites/default/files/isewtweetbg.jpg',
+      productimage: e.target.elements.productImage.value.trim(),
       price: e.target.elements.price.value.trim(),
       quantity: e.target.elements.quantity.value.trim(),
       minallowed: e.target.elements.minAllowed.value.trim(),
