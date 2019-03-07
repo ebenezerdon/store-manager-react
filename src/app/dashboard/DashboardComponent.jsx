@@ -47,11 +47,12 @@ const DashboardComponent = ({
 
   const latestProducts = () => {
     const { data } = products;
+    const sortedData = [...data].reverse();
     return (
-      data.slice(0, 4).map(product => (
+      sortedData.slice(0, 4).map(product => (
         <Link className="col-md-6 col-sm-12"
           to={`/product/${product.id}`}>
-          <img src={product.productimage} width='100' />
+          <img src={product.productimage} width='300' />
         </Link>
       ))
     )
@@ -88,7 +89,7 @@ const DashboardComponent = ({
         <div className='product'>
           <div className="product-item tp">
             <h3>Latest Products</h3>
-            <div className="t-products">
+            <div className="t-products" id="latestProducts">
               {products.data && latestProducts()}
             </div>
             <Link className="green-button" to="/products">See All Products</Link>
