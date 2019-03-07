@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import lifecycle from 'react-pure-lifecycle';
 import { Link } from 'react-router-dom';
 import { constants } from '../common';
+import { EllipsisLoaderComponent } from '../common'
 import '../style/admindashboard.css';
 
 const methods = {
@@ -81,7 +82,12 @@ const DashboardComponent = ({
   }
 
   return(
-    <Fragment>
+    <>
+      <div id="centerLoader">
+        {fetchProductsState === constants.FETCHING_PRODUCTS &&
+          <EllipsisLoaderComponent/>
+        }
+      </div>
       <div className="row" id="dashboardColumns">
         <div className='product'>
           {userData.currentUser && userProfile()}
@@ -116,7 +122,7 @@ const DashboardComponent = ({
           </div>
         </div>
       </div>
-    </Fragment>
+    </>
   )
 }
 
