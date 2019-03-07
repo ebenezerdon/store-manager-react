@@ -22,13 +22,13 @@ const AddUserComponent = ({ addUser, addUserState }) => {
     <>
       <form id="addproductForm" autoComplete="on" onSubmit={onFormSubmit}>
         <div className="form-group">
-          <input type="text" placeholder="Full Name" id="fullName" />
+          <input type="text" placeholder="Full Name" id="fullName" required/>
         </div>
         <div className="form-group">
-          <input type="text" placeholder="Email Address" id="emailAddress" />
+          <input type="text" placeholder="Email Address" id="emailAddress" required/>
         </div>
         <div className="form-group">
-          <input type="text" placeholder="Phone Number" id="phoneNumber" />
+          <input type="text" placeholder="Phone Number" id="phoneNumber" required/>
         </div>
         <div className="form-group">
           <select className="form-control" id="role">
@@ -37,8 +37,7 @@ const AddUserComponent = ({ addUser, addUserState }) => {
           </select>
         </div>
         <div id="selectImage">
-          <label id="label" htmlFor="userImage">Select user image</label>
-          <input type="file" id="userImage" />
+          <input type="text" placeholder="Input product image url" id="userImage" required/>
         </div>
         <button id="addProductBtn" type="submit">Add User</button>
       </form>
