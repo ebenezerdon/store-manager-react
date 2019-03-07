@@ -19,7 +19,7 @@ const methods = {
   }
 };
 
-const addProductComponent = ({ addProduct, addProductState }) => {
+const AddProductComponent = ({ addProduct, addProductState }) => {
   const onFormSubmit = e => {
     e.preventDefault();
     const productDetails = {
@@ -65,4 +65,4 @@ const addProductComponent = ({ addProduct, addProductState }) => {
   );
 };
 
-export default lifecycle(methods)(addProductComponent);
+export default lifecycle(methods)(AddProductComponent);

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { doAddProduct } from './duck';
-import addProductComponent from './AddProductComponent';
+import AddProductComponent from './AddProductComponent';
 import {
   doFetchCurrentUser,
   doFetchAllUsers,
@@ -38,9 +38,9 @@ const mapDispatchToProps = dispatch => {
       dispatch(doAddProduct(productDetails)),
   };
 };
-const addProductContainer = connect(
+const AddProductContainer = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(addProductComponent);
+)(AddProductComponent);
 
-export { addProductContainer, mapDispatchToProps, mapStateToProps };
+export { AddProductContainer, mapDispatchToProps, mapStateToProps };

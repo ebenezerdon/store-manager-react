@@ -17,7 +17,7 @@ const methods = {
   }
 };
 
-const addUserComponent = ({ addUser, addUserState }) => {
+const AddUserComponent = ({ addUser, addUserState }) => {
   const onFormSubmit = e => {
     e.preventDefault();
     const userDetails = {
@@ -63,4 +63,4 @@ const addUserComponent = ({ addUser, addUserState }) => {
   );
 };
 
-export default lifecycle(methods)(addUserComponent);
+export default lifecycle(methods)(AddUserComponent);
