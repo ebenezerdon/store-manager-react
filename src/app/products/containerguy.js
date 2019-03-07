@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { doAddProduct } from './duck';
-import addProductComponent from './AddProductComponent';
+import addProductComponent from './stuff';
 import {
   doFetchCurrentUser,
   doFetchAllUsers,
