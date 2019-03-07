@@ -1,21 +1,7 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
-import lifecycle from 'react-pure-lifecycle';
 import { EllipsisLoaderComponent } from '../common/loaders'
 import { constants } from './duck';
-
-const methods = {
-  componentDidMount({
-    fetchStoreData,
-    userData
-  }) {
-    console.log('-------', userData);
-    if (!userData.allUsers) {
-      console.log('Yoooo!');
-      fetchStoreData();
-    }
-  }
-};
 
 const AddUserComponent = ({ addUser, addUserState }) => {
   const onFormSubmit = e => {
@@ -31,9 +17,6 @@ const AddUserComponent = ({ addUser, addUserState }) => {
     addUser(userDetails);
   };
   console.log('====-=====', addUserState);
-  if (addUserState === constants.ADD_USER_SUCCESS) {
-    alert('yo!');
-  }
   const submitButton = <button type="submit" className="btn btn-primary">Submit</button>
   return (
     <>
@@ -63,4 +46,4 @@ const AddUserComponent = ({ addUser, addUserState }) => {
   );
 };
 
-export default lifecycle(methods)(AddUserComponent);
+export default AddUserComponent;
