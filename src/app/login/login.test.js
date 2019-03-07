@@ -7,7 +7,7 @@ import { shallow, mount } from 'enzyme';
 import { Provider } from 'react-redux';
 import { LoginComponent as Login } from './LoginComponent';
 import { actions, constants, loginReducer, types } from './duck';
-import RingLoaderComponent from '../loaders';
+import { EllipsisLoaderComponent } from '../common/loaders'
 import {
   LoginContainer,
   mapDispatchToProps,
@@ -31,21 +31,21 @@ describe('Login Component', () => {
     wrapper.find('form').simulate('submit', {
       target: {
         elements: {
-          usernameOrEmail: {
-            value: 'spicy',
+          emailaddress: {
+            value: 'spicy@dicy.com',
           },
           password: {
-            value: 'dicy',
+            value: 'spicydicy',
           },
         },
       },
       preventDefault: () => {},
     });
-    expect(loginUser).toHaveBeenCalledWith('spicy', 'dicy');
+    expect(loginUser).toHaveBeenCalledWith('spicy@dicy.com', 'spicydicy');
   });
 
   it('should render an email input', () => {
-    expect(shallow(<Login />).find('#usernameOrEmail').length).toEqual(1);
+    expect(shallow(<Login />).find('#emailaddress').length).toEqual(1);
   });
 
   it('should render a password input', () => {
@@ -59,12 +59,12 @@ describe('Login Component', () => {
       errorMessage: '',
     };
     const component = shallow(<Login {...props} />);
-    expect(component.containsMatchingElement(<Redirect to="/" />)).toEqual(
+    expect(component.containsMatchingElement(<Redirect to="/dashboard" />)).toEqual(
       true,
     );
   });
 
-  it('it should render the RingLoaderComponent if logging in', () => {
+  it('it should render the EllipsisLoaderComponent if logging in', () => {
     const props = {
       loginUser: () => {},
       loginState: 'LOGGING_IN',
@@ -72,7 +72,7 @@ describe('Login Component', () => {
       history: () => {},
     };
     const component = shallow(<Login {...props} />);
-    expect(component.contains(<RingLoaderComponent />)).toBe(true);
+    expect(component.contains(<EllipsisLoaderComponent />)).toBe(true);
   });
 });
 
@@ -175,8 +175,12 @@ describe('Connected Login Component Dispatches Login Success', () => {
       preventDefault: () => {},
       target: {
         elements: {
-          usernameOrEmail: { value: 'spicy' },
-          password: { value: 'dicy' },
+          emailaddress: {
+            value: 'spicy@dicy.com',
+          },
+          password: {
+            value: 'spicydicy',
+          },
         },
       },
     });
@@ -215,8 +219,12 @@ describe('Connected Login Component Dispatches Login Error', () => {
       preventDefault: () => {},
       target: {
         elements: {
-          usernameOrEmail: { value: 'bugsburney' },
-          password: { value: 'bugsbugs' },
+          emailaddress: {
+            value: 'spicy@dicy.com',
+          },
+          password: {
+            value: 'spicydicy',
+          },
         },
       },
     });

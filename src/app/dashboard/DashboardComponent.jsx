@@ -47,7 +47,6 @@ const DashboardComponent = ({
 
   const latestProducts = () => {
     const { data } = products;
-    data.reverse();
     return (
       data.slice(0, 4).map(product => (
         <Link className="col-md-6 col-sm-12"
@@ -60,7 +59,6 @@ const DashboardComponent = ({
 
   const storeAttendants = () => {
     const { allUsers } = userData;
-    allUsers.reverse();
     return (
       allUsers.slice(0, 4).map(user => (
         <li>
@@ -72,7 +70,6 @@ const DashboardComponent = ({
 
   const sales = () => {
     const { data } = saleRecord;
-    data.reverse();
     return (
       data.slice(0, 4).map(saleRecord => (
         <li>

@@ -4,7 +4,6 @@ import './cart.css';
 import '../style/products.css';
 
 const cartComponent = ({ cart, checkout, checkoutState}) => {
-  console.log('----->>', cart)
   const listProducts = () => {
     return (
       cart.map(product => (
