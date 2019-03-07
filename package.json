@@ -8,7 +8,7 @@
     "start": "npm run build && npm run serve",
     "build": "webpack --config webpack/webpack.prod.js",
     "serve": "node server.js",
-    "test:dev": "jest",
+    "test:dev": "jest --coverage",
     "update:snapshot": "jest --updateSnapshot"
   },
   "repository": {
