@@ -22,6 +22,10 @@ const ListProductComponent = ({
   addToCart,
   fetchProductsState,
 }) => {
+  let sortedData;
+  if (products && products.data){
+    sortedData = [...products.data].reverse()
+  }
   return (
     <>
       <div className='' id="">
@@ -30,7 +34,7 @@ const ListProductComponent = ({
         </Link>
         <div className="row">
           {products.data &&
-            products.data.map(product => (
+            sortedData.map(product => (
               <div className="product">
                 <div className="product-item hover-effect">
                   <Link to={`/product/${product.id}`}>
@@ -38,6 +42,7 @@ const ListProductComponent = ({
                   </Link>
                   <Link to={`/product/${product.id}`}>
                     <p>{product.productname}</p>
+                    <p>{product.price}</p>
                   </Link>
                   <button onClick={() => addToCart(cart, product)} className='cart-btn'>Add to cart</button>
                   <div className="edit-product-div">
