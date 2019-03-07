@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sale record component should render the component 1`] = `
+<SaleRecordComponent
+  data={
+    Array [
+      Object {
+        "created_at": "created_at",
+        "price": "price",
+        "productname": "productname",
+        "quantity": "quantity",
+      },
+    ]
+  }
+  fetchStoreData={[MockFunction]}
+  saleRecord={
+    Object {
+      "data": Array [],
+    }
+  }
+/>
+`;

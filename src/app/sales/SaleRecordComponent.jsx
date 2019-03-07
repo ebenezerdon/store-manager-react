@@ -22,7 +22,6 @@ const SaleRecordComponent = ({
 }) => {
   const listSales = () => {
     const { data } = saleRecord;
-    data.reverse();
     return (
       data.map(sale => (
         <tr>
@@ -46,7 +45,19 @@ const SaleRecordComponent = ({
           <th>Unit Price</th>
           <th>Attendant Id</th>
         </tr>
-        {saleRecord.data && listSales()}
+        {saleRecord.data &&
+          saleRecord.data.map(sale => (
+            <tr>
+              <td>{sale.created_at}</td>
+              <td>{sale.productname}</td>
+              <td>{sale.quantity}</td>
+              <td>{sale.price}</td>
+              <td>
+                <Link to={`/user/${sale.attendant_id}`}>{sale.attendant_id}</Link>
+              </td>
+            </tr>
+          ))
+        }
       </table>
     </>
   )
