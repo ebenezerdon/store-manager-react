@@ -24,7 +24,9 @@
   "homepage": "https://github.com/ebenezerdon/store-manager-react#readme",
   "dependencies": {
     "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.3.3",
     "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0",
     "availity-reactstrap-validation": "^2.5.0",
     "axios": "^0.18.0",
     "babel-eslint": "^10.0.1",
