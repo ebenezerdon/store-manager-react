@@ -37,14 +37,14 @@ const SingleProductComponent = ({
                 alt={`Sample photo of ${data.productname}`} />
               </div>
               <figcaption>
-                <p>{data.description}</p>
+                <p id="desc">{data.description}</p>
                 <h3>Quantity in Inventory</h3>
                 <h4>{data.quantity}</h4>
                 <h3>Minimum Product Quantity</h3>
                 <h4>{data.minallowed}</h4>
                 <h3>Price</h3>
                 <h4>{data.price}</h4>
-                <button>Add to cart</button>
+                <button onClick={() => addToCart(cart, data)} id='cartBtn'>Add to cart</button>
               </figcaption>
             </figure>
           </div>
