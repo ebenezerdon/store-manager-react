@@ -4,7 +4,7 @@ import { mount } from 'enzyme';
 import thunk from 'redux-thunk';
 import configureStore from 'redux-mock-store';
 import { Provider } from 'react-redux';
-import NavbarComponent from './NavbarComponent';
+import NavbarComponent from './navbarComponent2';
 
 global.localStorage = {
   getItem: key => {
