@@ -1,23 +1,8 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
-import lifecycle from 'react-pure-lifecycle';
 import { EllipsisLoaderComponent } from '../common/loaders'
 import { constants } from './duck';
 import './addProduct.css';
-
-const methods = {
-  componentDidMount({
-    fetchStoreData,
-    userData,
-    products
-  }) {
-    console.log('-------', products);
-    if (!products.data) {
-      console.log('Yoooo!');
-      fetchStoreData();
-    }
-  }
-};
 
 const AddProductComponent = ({ addProduct, addProductState }) => {
   const onFormSubmit = e => {
@@ -32,10 +17,7 @@ const AddProductComponent = ({ addProduct, addProductState }) => {
     }
     addProduct(productDetails);
   };
-  console.log('====-=====', addProductState);
-  if (addProductState === constants.ADD_PRODUCT_SUCCESS) {
-    alert('yo!');
-  }
+
   const submitButton = <button type="submit" className="btn btn-primary">Submit</button>
   return (
     <>
@@ -65,4 +47,4 @@ const AddProductComponent = ({ addProduct, addProductState }) => {
   );
 };
 
-export default lifecycle(methods)(AddProductComponent);
+export default AddProductComponent;
