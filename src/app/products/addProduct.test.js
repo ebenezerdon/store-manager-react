@@ -50,7 +50,7 @@ describe('AddProductComponent Component', () => {
             value: 'value2',
           },
           productImage: {
-            value: 'value3',
+            value: 'http://staffmobility.eu/sites/default/files/isewtweetbg.jpg',
           },
           price: {
             value: 'value4',
