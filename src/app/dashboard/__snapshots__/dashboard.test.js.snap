@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`fetchAllDataReducer should render the component 1`] = `
+<DashboardComponent
+  fetchCurrentUser={[MockFunction]}
+  fetchProducts={[MockFunction]}
+  fetchSaleRecord={[MockFunction]}
+  fetchallUsers={[MockFunction]}
+  products={
+    Object {
+      "data": Array [
+        Object {
+          "product": "product",
+        },
+      ],
+    }
+  }
+  saleRecord={
+    Object {
+      "data": Array [
+        Object {
+          "sale": "sale",
+        },
+      ],
+    }
+  }
+  userData={
+    Object {
+      "currentUser": Array [
+        Object {
+          "fullname": "fullname",
+          "role": "role",
+          "userimage": "userimage",
+        },
+      ],
+    }
+  }
+/>
+`;
