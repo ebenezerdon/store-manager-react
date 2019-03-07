@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`It should render the EllipsisLoader should render the EllipsisLoaderComponent 1`] = `
+<img
+  alt="loader"
+  className="ellipsis"
+  src={Object {}}
+/>
+`;

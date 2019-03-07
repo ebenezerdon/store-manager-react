@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List user component should render the component 1`] = `
+<ListUserComponent
+  allUsers={Object {}}
+  fetchStoreData={[MockFunction]}
+  userData={
+    Object {
+      "allUsers": Array [],
+    }
+  }
+/>
+`;

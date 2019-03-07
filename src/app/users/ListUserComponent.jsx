@@ -5,7 +5,7 @@ import { constants } from '../common';
 import './listUser.css';
 
 const methods = {
-  componentWillMount({
+  componentDidMount({
     fetchStoreData,
     userData
   }) {
@@ -21,7 +21,6 @@ const ListUserComponent = ({
 }) => {
   const listUser = () => {
     const { allUsers } = userData;
-    allUsers.reverse();
     return (
       allUsers.map(user => (
         <>
