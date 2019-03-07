@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { doAddUser } from './duck';
-import addUserComponent from './addUserComponent';
+import AddUserComponent from './AddUserComponent';
 import {
   doFetchCurrentUser,
   doFetchAllUsers,
@@ -38,9 +38,9 @@ const mapDispatchToProps = dispatch => {
       dispatch(doAddUser(userDetails)),
   };
 };
-const addUserContainer = connect(
+const AddUserContainer = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(addUserComponent);
+)(AddUserComponent);
 
-export { addUserContainer, mapDispatchToProps, mapStateToProps };
+export { AddUserContainer, mapDispatchToProps, mapStateToProps };
