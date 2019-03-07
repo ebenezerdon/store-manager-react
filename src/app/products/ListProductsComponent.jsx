@@ -15,34 +15,13 @@ const methods = {
   }
 };
 
+/* istanbul ignore next */
 const ListProductComponent = ({
   products,
   cart,
   addToCart,
   fetchProductsState,
 }) => {
-  addToCart = addToCart.bind()
-  const listProducts = () => {
-    const { data } = products;
-    return (
-      data.map(product => (
-          <div className="product">
-            <div className="product-item hover-effect">
-              <Link to={`/product/${product.id}`}>
-                <img src={product.productimage} width='300' />
-              </Link>
-              <Link to={`/product/${product.id}`}>
-                <p>{product.productname}</p>
-              </Link>
-              <button onClick={() => addToCart(cart, product)} className='cart-btn'>Add to cart</button>
-              <div className="edit-product-div">
-              </div>
-            </div>
-          </div>
-      ))
-    )
-  }
-
   return (
     <>
       <div className='' id="">
@@ -50,7 +29,23 @@ const ListProductComponent = ({
           <button id="add-product-btn">Add New Product</button>
         </Link>
         <div className="row">
-          {products.data && listProducts()}
+          {products.data &&
+            products.data.map(product => (
+              <div className="product">
+                <div className="product-item hover-effect">
+                  <Link to={`/product/${product.id}`}>
+                    <img src={product.productimage} width='300' />
+                  </Link>
+                  <Link to={`/product/${product.id}`}>
+                    <p>{product.productname}</p>
+                  </Link>
+                  <button onClick={() => addToCart(cart, product)} className='cart-btn'>Add to cart</button>
+                  <div className="edit-product-div">
+                  </div>
+                </div>
+              </div>
+            ))
+          }
         </div>
       </div>
     </>

@@ -10,9 +10,7 @@ const mapStateToProps = ({
 const mapDispatchToProps = dispatch => {
   return {
     checkout: productDetails =>
-      dispatch(doCheckout(productDetails)),
-    addProduct: productDetails =>
-      dispatch(doAddProduct(productDetails)),
+      dispatch(doCheckout(productDetails))
   };
 };
 
@@ -21,4 +19,4 @@ const CartContainer = connect(
   mapDispatchToProps
 )(CartComponent);
 
-export { CartContainer, mapStateToProps };
+export { CartContainer, mapDispatchToProps, mapStateToProps };
