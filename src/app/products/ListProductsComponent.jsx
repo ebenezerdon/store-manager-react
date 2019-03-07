@@ -2,6 +2,7 @@ import React from 'react';
 import lifecycle from 'react-pure-lifecycle';
 import { Link } from 'react-router-dom';
 import { constants } from '../common';
+import { EllipsisLoaderComponent } from '../common/loaders'
 import '../style/products.css';
 
 const methods = {
@@ -28,7 +29,13 @@ const ListProductComponent = ({
   }
   return (
     <>
-      <div className='' id="">
+      <div id="listProducts">
+        <div id="centerLoader">
+          {fetchProductsState === constants.FETCHING_PRODUCTS &&
+            <EllipsisLoaderComponent/>
+          }
+        </div>
+        
         <Link to="/new/product">
           <button id="add-product-btn">Add New Product</button>
         </Link>
