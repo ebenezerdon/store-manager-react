@@ -9,6 +9,7 @@
     "build": "webpack --config webpack/webpack.prod.js",
     "serve": "node server.js",
     "test:dev": "jest --coverage",
+    "test": "jest --coverage --coverageReporters=text-lcov | coveralls",
     "update:snapshot": "jest --updateSnapshot"
   },
   "repository": {
@@ -62,6 +63,7 @@
     "@babel/preset-react": "^7.0.0",
     "babel-jest": "^24.0.0",
     "babel-loader": "^8.0.5",
+    "coveralls": "^3.0.2",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.9.0",
     "enzyme-to-json": "^3.3.5",
