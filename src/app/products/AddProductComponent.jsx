@@ -38,7 +38,7 @@ const AddProductComponent = ({ addProduct, addProductState }) => {
           <input type="number" placeholder="Minimum quantiy allowed" id="minAllowed" />
         </div>
         <div id="selectImage">
-          <input type="text" placeholder="Input user image url" id="productImage" />
+          <input type="text" placeholder="Input product image url" id="productImage" />
         </div>
         <button id="addProductBtn" type="submit">Add product</button>
       </form>
