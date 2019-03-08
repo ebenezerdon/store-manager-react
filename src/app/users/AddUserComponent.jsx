@@ -16,7 +16,6 @@ const AddUserComponent = ({ addUser, addUserState }) => {
     }
     addUser(userDetails);
   };
-  console.log('====-=====', addUserState);
   const submitButton = <button type="submit" className="btn btn-primary">Submit</button>
   return (
     <>

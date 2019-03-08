@@ -10,7 +10,7 @@ const AddProductComponent = ({ addProduct, addProductState }) => {
     const productDetails = {
       productname: e.target.elements.productName.value.trim(),
       description: e.target.elements.description.value.trim(),
-      productimage: 'http://staffmobility.eu/sites/default/files/isewtweetbg.jpg',
+      productimage: e.target.elements.productImage.value.trim(),
       price: e.target.elements.price.value.trim(),
       quantity: e.target.elements.quantity.value.trim(),
       minallowed: e.target.elements.minAllowed.value.trim(),
@@ -38,7 +38,7 @@ const AddProductComponent = ({ addProduct, addProductState }) => {
           <input type="number" placeholder="Minimum quantiy allowed" id="minAllowed" />
         </div>
         <div id="selectImage">
-          <input type="text" placeholder="Input user image url" id="productImage" />
+          <input type="text" placeholder="Input product image url" id="productImage" />
         </div>
         <button id="addProductBtn" type="submit">Add product</button>
       </form>

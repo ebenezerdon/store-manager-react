@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import lifecycle from 'react-pure-lifecycle';
 import { Link } from 'react-router-dom';
 import { constants } from '../common';
+import { EllipsisLoaderComponent } from '../common'
 import '../style/admindashboard.css';
 
 const methods = {
@@ -47,11 +48,12 @@ const DashboardComponent = ({
 
   const latestProducts = () => {
     const { data } = products;
+    const sortedData = [...data].reverse();
     return (
-      data.slice(0, 4).map(product => (
+      sortedData.slice(0, 4).map(product => (
         <Link className="col-md-6 col-sm-12"
           to={`/product/${product.id}`}>
-          <img src={product.productimage} width='100' />
+          <img src={product.productimage} width='300' />
         </Link>
       ))
     )
@@ -80,7 +82,12 @@ const DashboardComponent = ({
   }
 
   return(
-    <Fragment>
+    <>
+      <div id="centerLoader">
+        {fetchProductsState === constants.FETCHING_PRODUCTS &&
+          <EllipsisLoaderComponent/>
+        }
+      </div>
       <div className="row" id="dashboardColumns">
         <div className='product'>
           {userData.currentUser && userProfile()}
@@ -88,7 +95,7 @@ const DashboardComponent = ({
         <div className='product'>
           <div className="product-item tp">
             <h3>Latest Products</h3>
-            <div className="t-products">
+            <div className="t-products" id="latestProducts">
               {products.data && latestProducts()}
             </div>
             <Link className="green-button" to="/products">See All Products</Link>
@@ -115,7 +122,7 @@ const DashboardComponent = ({
           </div>
         </div>
       </div>
-    </Fragment>
+    </>
   )
 }
 

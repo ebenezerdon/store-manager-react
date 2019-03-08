@@ -2,6 +2,7 @@ import React from 'react';
 import lifecycle from 'react-pure-lifecycle';
 import { Link } from 'react-router-dom';
 import { constants } from '../common';
+import { EllipsisLoaderComponent } from '../common/loaders'
 import '../style/products.css';
 
 const methods = {
@@ -22,15 +23,25 @@ const ListProductComponent = ({
   addToCart,
   fetchProductsState,
 }) => {
+  let sortedData;
+  if (products && products.data){
+    sortedData = [...products.data].reverse()
+  }
   return (
     <>
-      <div className='' id="">
+      <div id="listProducts">
+        <div id="centerLoader">
+          {fetchProductsState === constants.FETCHING_PRODUCTS &&
+            <EllipsisLoaderComponent/>
+          }
+        </div>
+        
         <Link to="/new/product">
           <button id="add-product-btn">Add New Product</button>
         </Link>
         <div className="row">
           {products.data &&
-            products.data.map(product => (
+            sortedData.map(product => (
               <div className="product">
                 <div className="product-item hover-effect">
                   <Link to={`/product/${product.id}`}>
@@ -38,6 +49,7 @@ const ListProductComponent = ({
                   </Link>
                   <Link to={`/product/${product.id}`}>
                     <p>{product.productname}</p>
+                    <p>{product.price}</p>
                   </Link>
                   <button onClick={() => addToCart(cart, product)} className='cart-btn'>Add to cart</button>
                   <div className="edit-product-div">
