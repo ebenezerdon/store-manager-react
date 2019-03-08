@@ -1,6 +1,6 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
-import { EllipsisLoaderComponent } from '../common/loaders'
+import Notifications from 'react-notify-toast';
+import { EllipsisLoaderComponent } from '../common'
 import { constants } from './duck';
 import './addProduct.css';
 
@@ -18,9 +18,10 @@ const AddProductComponent = ({ addProduct, addProductState }) => {
     addProduct(productDetails);
   };
 
-  const submitButton = <button type="submit" className="btn btn-primary">Submit</button>
+  const submitButton = <button id="addProductBtn" type="submit">Add product</button>
   return (
     <>
+      <Notifications />
       <form id="addproductForm" autoComplete="on" onSubmit={onFormSubmit}>
         <div className="form-group">
           <input type="text" placeholder="Product Name" id="productName" />
@@ -40,7 +41,8 @@ const AddProductComponent = ({ addProduct, addProductState }) => {
         <div id="selectImage">
           <input type="text" placeholder="Input product image url" id="productImage" />
         </div>
-        <button id="addProductBtn" type="submit">Add product</button>
+          {addProductState !== constants.ADDING_PRODUCT && submitButton}
+          {addProductState === constants.ADDING_PRODUCT && <EllipsisLoaderComponent />}
       </form>
     </>
   );
