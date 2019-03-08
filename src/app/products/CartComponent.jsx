@@ -14,6 +14,7 @@ const cartComponent = ({ cart, checkout, checkoutState}) => {
               </Link>
               <Link to={`/product/${product.id}`}>
                 <p>{product.productname}</p>
+                <p>{product.price}</p>
               </Link>
             </div>
           </div>

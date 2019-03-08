@@ -55,3 +55,25 @@
   font-weight: 400;
   letter-spacing: 2px;
 }
+
+.profile #desc {
+  font-weight: normal;
+}
+
+.profile #cartBtn {
+  border: 1px solid #262734;
+  border-radius: 3px;
+  color: #fff;
+  font-weight: 2em;
+  padding: 1em 3em;
+  margin: 1em 0 0 0;
+  background: #262734;
+  cursor: pointer;
+  transition: background ease-in 0.25s;
+}
+
+.profile #cartBtn:hover {
+  background: rgb(235, 235, 235);
+  color: #2B2D42;
+  font-weight: bold;
+}
