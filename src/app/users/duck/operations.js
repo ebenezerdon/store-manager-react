@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { toast } from 'react-toastify';
+import {notify} from 'react-notify-toast';
 import actions from './actions';
 import constants from './constants';
 
@@ -15,15 +15,14 @@ const doAddUser = userDetails => dispatch => {
     .post(`${apiUrl}/auth/signup`, userDetails, headers)
     .then(({ data }) => {
       dispatch(setAddUserState(constants.ADD_USER_SUCCESS));
-      console.log(data);
+      const color = { background: '#d62e85', text: "#FFFFFF" };
+      notify.show('User Added Successfully!', 'custom', 2000, color);
     })
     .catch(({ response }) => {
       dispatch(setAddUserState(constants.ADD_USER_ERROR));
       dispatch(setAddUserError(response.data.error));
-      console.log(response.data);
-      toast.error(response.data.error, {
-        hideProgressBar: true,
-      });
+      const color = { background: '#da2424', text: "#FFFFFF" };
+      notify.show(response.data.message, 'custom', 2000, color);
     });
 };
 
