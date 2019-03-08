@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should render App 1`] = `
+<BrowserRouter>
+  <NavbarComponent />
+  <Switch>
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/dashboard"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/products"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/product/:id"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/cart"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/sales"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/users"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/new/product"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/new/user"
+    />
+  </Switch>
+</BrowserRouter>
+`;
