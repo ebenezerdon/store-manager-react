@@ -1,5 +1,5 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
+import Notifications from 'react-notify-toast';
 import { EllipsisLoaderComponent } from '../common/loaders'
 import { constants } from './duck';
 
@@ -16,18 +16,22 @@ const AddUserComponent = ({ addUser, addUserState }) => {
     }
     addUser(userDetails);
   };
-  const submitButton = <button type="submit" className="btn btn-primary">Submit</button>
+  const submitButton = <button id="addProductBtn" type="submit">Add User</button>
   return (
     <>
+      <Notifications />
       <form id="addproductForm" autoComplete="on" onSubmit={onFormSubmit}>
         <div className="form-group">
           <input type="text" placeholder="Full Name" id="fullName" required/>
         </div>
         <div className="form-group">
-          <input type="text" placeholder="Email Address" id="emailAddress" required/>
+          <input type="email" placeholder="Email Address" id="emailAddress" required/>
         </div>
         <div className="form-group">
           <input type="text" placeholder="Phone Number" id="phoneNumber" required/>
+        </div>
+        <div className="form-group">
+          <input type="text" placeholder="Password" id="password" required/>
         </div>
         <div className="form-group">
           <select className="form-control" id="role">
@@ -36,9 +40,10 @@ const AddUserComponent = ({ addUser, addUserState }) => {
           </select>
         </div>
         <div id="selectImage">
-          <input type="text" placeholder="Input product image url" id="userImage" required/>
+          <input type="text" placeholder="Input user image url" id="userImage" required/>
         </div>
-        <button id="addProductBtn" type="submit">Add User</button>
+        {addUserState !== constants.ADDING_USER && submitButton}
+        {addUserState === constants.ADDING_USER && <EllipsisLoaderComponent />}
       </form>
     </>
   );
