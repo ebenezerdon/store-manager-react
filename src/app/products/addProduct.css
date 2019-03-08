@@ -24,6 +24,7 @@
 #selectImage #label {
   cursor: pointer;
   border: 1px solid #262734;
+  border: 1px solid #da2424;
   padding: 5px;
 }
 
@@ -42,9 +43,11 @@
 	text-decoration:none;
 	text-shadow:0px 1px 0px #213fb8;
 }
+
 #addProductBtn:hover {
 	background-color:#16102e;
 }
+
 #addProductBtn:active {
 	position:relative;
 	top:1px;
@@ -52,4 +55,9 @@
 
 .edit-link {
   margin: 2px;
+}
+
+#addproductForm .ellipsis {
+  transform: scale(0.9);
+  margin-top: -70px;
 }

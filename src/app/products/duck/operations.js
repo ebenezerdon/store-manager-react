@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { toast } from 'react-toastify';
+import {notify} from 'react-notify-toast';
 import actions from './actions';
 import constants from './constants';
 
@@ -22,15 +22,14 @@ const doAddProduct = productDetails => dispatch => {
     .post(`${apiUrl}/products`, productDetails, headers)
     .then(({ data }) => {
       dispatch(setAddProductState(constants.ADD_PRODUCT_SUCCESS));
-      console.log(data);
+      const color = { background: '#d62e85', text: "#FFFFFF" };
+      notify.show('Product Added Successfully!', 'custom', 2000, color);
     })
     .catch(({ response }) => {
       dispatch(setAddProductState(constants.ADD_PRODUCT_ERROR));
       dispatch(setAddProductError(response.data.error));
-      console.log(response.data);
-      toast.error(response.data.error, {
-        hideProgressBar: true,
-      });
+      const color = { background: '#da2424', text: "#FFFFFF" };
+      notify.show(response.data.message, 'custom', 2000, color);
     });
 };
 
@@ -61,6 +60,8 @@ const doCheckout = productDetails => dispatch => {
 const doAddToCart = (cart, product) => dispatch => {
   cart.unshift(product);
   dispatch(addToCart(({ cart })));
+  const color = { background: '#d62e85', text: "#FFFFFF" };
+  notify.show('Added!', 'custom', 2000, color);
 }
 
 export { doAddProduct, doCheckout, doAddToCart };

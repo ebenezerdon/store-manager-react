@@ -1,5 +1,6 @@
 import React from 'react';
 import lifecycle from 'react-pure-lifecycle';
+import Notifications from 'react-notify-toast';
 import { Link } from 'react-router-dom';
 import { constants } from '../common';
 import { EllipsisLoaderComponent } from '../common/loaders'
@@ -30,12 +31,13 @@ const ListProductComponent = ({
   return (
     <>
       <div id="listProducts">
+        <Notifications />
         <div id="centerLoader">
           {fetchProductsState === constants.FETCHING_PRODUCTS &&
             <EllipsisLoaderComponent/>
           }
         </div>
-        
+
         <Link to="/new/product">
           <button id="add-product-btn">Add New Product</button>
         </Link>
