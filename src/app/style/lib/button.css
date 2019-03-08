@@ -1,6 +1,6 @@
 
 .green-button {
-	background-color:#44c767;
+	background-color:rgb(44,45,58);
 	-moz-border-radius:28px;
 	-webkit-border-radius:28px;
 	border-radius:28px;
@@ -15,7 +15,7 @@
 	transition: all 0.3s ease-out;
 }
 .green-button:hover {
-	background-color:#002383;
+	background-color:#410b27;
 }
 .green-button:active {
 	position:relative;
